@@ -26,14 +26,25 @@ return {
 		'nvim-treesitter/nvim-treesitter',
 		opts = {
 			ensure_installed = {
-				'vim',
-				'lua',
 				'html',
 				'css',
 				'javascript',
 				'typescript',
-				'tsx',
 			},
 		},
+	},
+	{
+		'windwp/nvim-ts-autotag',
+		event = 'VeryLazy',
+		config = function()
+			require('nvim-ts-autotag').setup()
+		end,
+	},
+	{
+		'max397574/better-escape.nvim',
+		event = 'InsertEnter',
+		config = function()
+			require('better_escape').setup()
+		end,
 	},
 }
